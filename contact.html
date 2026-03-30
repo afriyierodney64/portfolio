@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Rodney</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+
+  <style>
+    /* Contact Page Specific Styles */
+    section {
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    h2 { text-align: center; margin-bottom: 2rem; color: #1e293b; font-size: 2rem; }
+
+    form {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border 0.3s;
+    }
+    
+    input:focus, textarea:focus {
+        border-color: #00bcd4;
+        outline: none;
+    }
+
+    label { display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500; }
+    
+    button {
+        width: 100%;
+        background-color: #1e293b;
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    button:hover { background-color: #334155; }
+    
+    .alert {
+        padding: 1rem;
+        background: #e0f7fa;
+        color: #006064;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><h1>Rodney</h1></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Get In Touch</h2>
+    
+    <div class="alert">
+        This is a static demo. Clicking "Send" will open your email client.
+    </div>
+
+    <!-- Mailto Form -->
+    <form action="mailto:rodneyafriyie@example.com" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" name="name" required placeholder="Your Name">
+
+      <label for="email">Email</label>
+      <input type="email" name="email" required placeholder="your.email@example.com">
+
+      <label for="message">Message</label>
+      <textarea name="message" rows="6" required placeholder="How can I help you?"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+ <footer>
+    <p>&copy; 2025 Rodney. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/rodney-afriyie-882338365" target="_blank">
+        <img src="images/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank">
+        <img src="images/github-icon.png" alt="GitHub">
+      </a>
+    </div>
+  </footer>  
+</body>
+</html>
