@@ -1,75 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Rodney</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <link href="style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
 
   <style>
     /* Contact Page Specific Styles */
     section {
-        padding: 4rem 2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        width: 100%;
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
     }
-    
-    h2 { text-align: center; margin-bottom: 2rem; color: #1e293b; font-size: 2rem; }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #1e293b;
+      font-size: 2rem;
+    }
 
     form {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
-    input, textarea {
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border 0.3s;
-    }
-    
-    input:focus, textarea:focus {
-        border-color: #00bcd4;
-        outline: none;
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border 0.3s;
     }
 
-    label { display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500; }
-    
+    input:focus,
+    textarea:focus {
+      border-color: #00bcd4;
+      outline: none;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+      font-weight: 500;
+    }
+
     button {
-        width: 100%;
-        background-color: #1e293b;
-        color: white;
-        padding: 1rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s;
+      width: 100%;
+      background-color: #1e293b;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    
-    button:hover { background-color: #334155; }
-    
+
+    button:hover {
+      background-color: #334155;
+    }
+
     .alert {
-        padding: 1rem;
-        background: #e0f7fa;
-        color: #006064;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
-        text-align: center;
+      padding: 1rem;
+      background: #e0f7fa;
+      color: #006064;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <a href="index.html"><h1>Rodney</h1></a>
+    <a href="index.html">
+      <h1>Rodney</h1>
+    </a>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -80,18 +98,24 @@
 
   <section>
     <h2>Get In Touch</h2>
-    
+
     <div class="alert">
-        This is a static demo. Clicking "Send" will open your email client.
+      This form is powered by Web3Forms. Messages will be sent directly to your email!
     </div>
 
-    <!-- Mailto Form -->
-    <form action="mailto:rodneyafriyie@example.com" method="post" enctype="text/plain">
+    <!-- Web3Forms API Form -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <!-- Replace YOUR_ACCESS_KEY_HERE with your Web3Forms access key -->
+      <input type="hidden" name="access_key" value="8240b76c-13d6-4309-959e-e04164195f82">
+
+      <!-- Optional: Redirect user to the homepage or a thank you page after submission -->
+      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
       <label for="name">Name</label>
       <input type="text" name="name" required placeholder="Your Name">
 
       <label for="email">Email</label>
-      <input type="email" name="email" required placeholder="your.email@example.com">
+      <input type="email" name="email" required placeholder="[EMAIL_ADDRESS]">
 
       <label for="message">Message</label>
       <textarea name="message" rows="6" required placeholder="How can I help you?"></textarea>
@@ -100,16 +124,17 @@
     </form>
   </section>
 
- <footer>
+  <footer>
     <p>&copy; 2025 Rodney. All rights reserved.</p>
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/rodney-afriyie-882338365" target="_blank">
-        <img src="images/linkedin.png" alt="LinkedIn">
+      <a href="https://www.linkedin.com/in/rodney-afriyie-882338365" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
       </a>
-      <a href="https://github.com/YOUR_USERNAME" target="_blank">
-        <img src="images/github-icon.png" alt="GitHub">
+      <a href="https://github.com/afriyierodney64" target="_blank" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
       </a>
     </div>
-  </footer>  
+  </footer>
 </body>
+
 </html>

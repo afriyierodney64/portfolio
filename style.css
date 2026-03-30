@@ -102,14 +102,21 @@ footer {
     margin-top: 1rem;
 }
 
-.social-icons img {
+.social-icons img, .social-icons svg {
     width: 28px;
     height: 28px;
     transition: transform 0.3s ease;
-    filter: brightness(0) invert(1); /* Makes icons white */
 }
 
-.social-icons img:hover {
+.social-icons img {
+    filter: brightness(0) invert(1);
+}
+
+.social-icons svg {
+    stroke: #fff;
+}
+
+.social-icons img:hover, .social-icons svg:hover {
     transform: scale(1.2);
     opacity: 0.8;
 }
