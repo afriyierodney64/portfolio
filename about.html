@@ -3,15 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | Rodney</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>About Me | Rodney Afriyie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 
   <style>
+    body {
+        background-color: #f8fafc;
+        color: #1e293b;
+    }
+
+    
+
+    
+
+    
+
+    
+
+    nav a:hover,
+    nav a.active {
+        color: #00bcd4;
+        border-bottom: 2px solid #00bcd4;
+    }
+
     /* Digital Resume Layout */
     .about-container {
-        max-width: 1100px;
-        margin: 3rem auto;
+        max-width: 1140px;
+        margin: 3.5rem auto;
         padding: 0 1.5rem;
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -22,32 +41,112 @@
     /* Left Sidebar */
     .bio-section {
         background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        padding: 2.2rem;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         position: sticky;
         top: 100px;
     }
     
-    .bio-section h2 { font-size: 1.8rem; color: #1e293b; margin-bottom: 1rem; }
-    .bio-text { color: #555; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem; }
+    .bio-section h2 {
+        font-size: 1.6rem;
+        color: #0f172a;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    
+    .bio-text {
+        color: #475569;
+        font-size: 0.92rem;
+        line-height: 1.75;
+        margin-bottom: 2rem;
+    }
     
     /* Education Styling */
-    .education-box { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee; }
-    .education-item { margin-bottom: 1.5rem; }
-    .education-item:last-child { margin-bottom: 0; }
+    .education-box {
+        margin-top: 2rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid #e2e8f0;
+    }
     
-    .education-item h4 { margin-bottom: 0.2rem; color: #1e293b; font-size: 1rem; line-height: 1.3; }
-    .education-item .school { color: #00bcd4; font-weight: 600; font-size: 0.9rem; display: block; }
-    .education-item .date { font-size: 0.85rem; color: #888; font-style: italic; display: block; margin-top: 2px;}
+    .education-box h3 {
+        font-size: 1.15rem;
+        color: #0f172a;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+    }
     
-    .skills-wrapper { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-    .skill-tag {
-        background-color: #e0f7fa;
-        color: #006064;
-        padding: 0.4rem 0.8rem;
-        border-radius: 50px;
+    .education-item {
+        margin-bottom: 1.35rem;
+    }
+    
+    .education-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .education-item h4 {
+        margin-bottom: 0.25rem;
+        color: #1e293b;
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+    
+    .education-item .school {
+        color: #00bcd4;
+        font-weight: 600;
+        font-size: 0.85rem;
+        display: block;
+    }
+    
+    .education-item .date {
         font-size: 0.8rem;
+        color: #64748b;
+        display: block;
+        margin-top: 2px;
+    }
+
+    /* Skills Box */
+    .skills-box {
+        margin-top: 2rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .skills-box h3 {
+        font-size: 1.15rem;
+        color: #0f172a;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .skill-category {
+        margin-bottom: 1rem;
+    }
+
+    .skill-category-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #64748b;
+        margin-bottom: 0.4rem;
+    }
+    
+    .skills-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+    
+    .skill-tag {
+        background-color: #f0fafb;
+        color: #00838f;
+        border: 1px solid #b2ebf2;
+        padding: 0.3rem 0.7rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
         font-weight: 600;
     }
 
@@ -56,47 +155,135 @@
         width: 100%;
         text-align: center;
         margin-top: 2rem;
-        padding: 0.8rem;
-        background-color: #1e293b;
+        padding: 0.85rem;
+        background-color: #0f172a;
         color: white;
         text-decoration: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-weight: 600;
-        transition: background 0.3s;
-        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
-    .resume-btn:hover { background-color: #334155; }
+    
+    .resume-btn:hover {
+        background-color: #1e293b;
+        transform: translateY(-2px);
+    }
     
     /* Right Timeline */
-    .timeline-section h3 { font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem; }
+    .timeline-section h3 {
+        font-size: 1.45rem;
+        color: #0f172a;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
     
     .timeline-item {
         background: white;
-        padding: 1.5rem;
-        border-radius: 12px;
+        padding: 1.75rem;
+        border-radius: 14px;
         margin-bottom: 1.5rem;
+        border: 1px solid #e2e8f0;
         border-left: 4px solid #00bcd4;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        transition: transform 0.3s ease;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.03);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .timeline-item:hover { transform: translateX(5px); }
     
-    .job-header { display: flex; justify-content: space-between; margin-bottom: 1rem; }
-    .job-title { font-size: 1.1rem; font-weight: 700; color: #1e293b; }
-    .company { color: #00bcd4; font-weight: 600; font-size: 0.9rem; }
-    .job-date { font-size: 0.85rem; color: #888; background: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 4px; white-space: nowrap; }
+    .timeline-item:hover {
+        transform: translateX(4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
     
-    .job-desc ul { list-style-type: none; padding-left: 0; }
-    .job-desc li { position: relative; padding-left: 1.2rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: #555; }
-    .job-desc li::before { content: "•"; color: #00bcd4; font-weight: bold; position: absolute; left: 0; }
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+    
+    .job-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    
+    .company {
+        color: #00bcd4;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    
+    .job-date {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #64748b;
+        background: #f1f5f9;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        white-space: nowrap;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .job-desc ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .job-desc li {
+        position: relative;
+        padding-left: 1.3rem;
+        margin-bottom: 0.65rem;
+        font-size: 0.92rem;
+        color: #475569;
+        line-height: 1.65;
+    }
 
-    @media (max-width: 850px) {
+    .job-desc li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .job-desc li::before {
+        content: "•";
+        color: #00bcd4;
+        font-weight: bold;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: -2px;
+    }
+
+    
+
+    
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.25rem;
+    }
+
+    .social-icons svg {
+        width: 24px;
+        height: 24px;
+        stroke: #64748b;
+        transition: stroke 0.2s, transform 0.2s;
+    }
+
+    .social-icons svg:hover {
+        stroke: #00bcd4;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 880px) {
         .about-container { grid-template-columns: 1fr; gap: 2rem; }
         .bio-section { position: static; }
-        .job-header { flex-direction: column; gap: 5px; }
+        .job-header { flex-direction: column; gap: 6px; }
     }
 
-    /* Print Styles: Hides Nav, Footer, and Button when printing */
     @media print {
         header, footer, .resume-btn { display: none !important; }
         body { background-color: white; color: black; }
@@ -111,7 +298,7 @@
 <body>
 
   <header>
-    <a href="index.html"><h1>Rodney</h1></a>
+    <a href="index.html"><h1>Rodney Afriyie</h1></a>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
@@ -122,56 +309,80 @@
 
   <div class="about-container">
     
-    <!-- LEFT SIDE: Bio & Stack -->
+    <!-- LEFT SIDE: Bio, Education, & Stack -->
     <aside class="bio-section">
-        <h2>Engineering Focused</h2>
+        <h2>Professional Summary</h2>
         <p class="bio-text">
-            I am a Software Engineer driven by the challenge of building complex, production-grade digital infrastructure. 
-            Currently studying ICT at GIMPA, I specialize in serverless architecture and hybrid mobile development.
-            <br><br>
-            My recent work involves creating entire digital ecosystems with complex backend logic managing inventory, payments, and real-time logistics.
+            Full-Stack Software Engineer specializing in React, Java, Python, and Serverless architectures. Proven track record in designing scalable financial transaction flows, payment integrations, and AI-driven applications. Deeply experienced in the full Software Development Life Cycle (SDLC), Agile/Scrum methodologies, and CI/CD practices. Passionate about leveraging AI and automation to build secure, robust enterprise solutions within the financial services sector.
         </p>
 
+        <!-- Education Box -->
         <div class="education-box">
             <h3>Education</h3>
-            
             <div class="education-item">
-                <span class="school">GIMPA</span>
-                <h4>BSc Information & Communication Technology</h4>
-                <span class="date">Exp. Graduation: June 2027</span>
+                <h4>BSc. Information Communication Technology</h4>
+                <span class="school">Ghana Institute of Management and Public Administration (GIMPA) – Accra, Ghana</span>
+                <span class="date">Expected Oct 2027</span>
             </div>
-
             <div class="education-item">
-                <span class="school">AITI-KACE</span>
                 <h4>Certification in Software Development (CSD)</h4>
-                <span class="date">Accra | Oct 2023 – Dec 2023</span>
+                <span class="school">The Ghana-India Kofi Annan Centre of Excellence (AITI-KACE) – Accra, Ghana</span>
+                <span class="date">Oct 2023 – Dec 2023</span>
             </div>
-
             <div class="education-item">
-                <span class="school">Achimota High School</span>
                 <h4>General Science (WASSCE)</h4>
-                <span class="date">Accra | Completion: Sept 2023</span>
+                <span class="school">Achimota High School – Accra, Ghana</span>
+                <span class="date">Sep 2023</span>
             </div>
         </div>
 
-        <div class="education-box">
-            <h3>Tech Stack</h3>
-            <div class="skills-wrapper">
-                <span class="skill-tag">React / Vite</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Tailwind CSS</span>
-                <span class="skill-tag">Serverless Architecture</span>
-                <span class="skill-tag">Supabase</span>
-                <span class="skill-tag">PostgreSQL / SQL</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Cloudinary AI API</span>
-                <span class="skill-tag">Paystack</span>
-                <span class="skill-tag">OSRM & Leaflet</span>
-                <span class="skill-tag">Git/GitHub</span>
-                <span class="skill-tag">Agile/Scrum</span>
-                <span class="skill-tag">Relational DB Design</span>
-                <span class="skill-tag">UI/UX</span>
+        <!-- Technical Skills Box -->
+        <div class="skills-box">
+            <h3>Technical Skills</h3>
+            <div class="skill-category">
+                <div class="skill-category-title">Languages</div>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Frameworks</div>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Node.js</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Databases & Architecture</div>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">Relational Database Design</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Supabase</span>
+                    <span class="skill-tag">Serverless Architecture</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">DevOps & Tools</div>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">Git/GitHub (Branching, PRs)</span>
+                    <span class="skill-tag">CI/CD workflows</span>
+                    <span class="skill-tag">Agile/Scrum</span>
+                    <span class="skill-tag">UI/UX</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Integrations</div>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">Cloudinary AI API</span>
+                    <span class="skill-tag">Paystack (Payments)</span>
+                    <span class="skill-tag">OSRM & Web Services</span>
+                </div>
             </div>
         </div>
 
@@ -179,66 +390,119 @@
         <a href="Rodney Afriyie - Resume.pdf" download="Rodney Afriyie - Resume.pdf" class="resume-btn">Download Resume</a>
     </aside>
 
-    <!-- RIGHT SIDE: Experience -->
+    <!-- RIGHT SIDE: Experience & Technical Projects -->
     <main class="timeline-section">
-        <h3>Work Experience</h3>
+        <h3>Professional Experience</h3>
 
-        <!-- Job 1: The MakersPlace -->
+        <!-- Job 1: Digital Point (Executive Lead) -->
         <div class="timeline-item">
             <div class="job-header">
                 <div>
-                    <div class="job-title">Intern (Robotics Team)</div>
-                    <div class="company">The MakersPlace</div>
+                    <div class="job-title">Lead Software Engineer (Executive)</div>
+                    <div class="company">Digital Point – Accra, Ghana</div>
                 </div>
-                <span class="job-date">June 2025 – July 2025</span>
+                <span class="job-date">Nov 2025 – Present</span>
             </div>
             <div class="job-desc">
                 <ul>
-                    <li>Programmed and troubleshot robotic systems, focusing on hardware-software integration and logical problem-solving.</li>
-                    <li>Engineered and showcased an interactive mBot at the World Youth Skills Day STEM exhibition, utilizing servo motors to automate an object-relocating gripper.</li>
-                    <li>Delivered live technical demonstrations to public audiences, translating complex engineering concepts into accessible language, honing the communication skills essential for client consulting.</li>
+                    <li><strong>Technical Design &amp; Architecture:</strong> Spearheaded the technical architecture and end-to-end development of "Aeopy," a proprietary, centralized Direct-to-Consumer (D2C) retail infrastructure, operating as the company’s core product offering.</li>
+                    <li><strong>System Optimization &amp; Delivery:</strong> Engineered a highly optimized, zero-maintenance system from the ground up, successfully deploying and launching the digital infrastructure for three distinct client businesses to date, aligning with strategic growth goals.</li>
+                    <li><strong>Process Reengineering &amp; CI/CD:</strong> Act as the primary technical executive, gathering business requirements and translating them into technical specifications to ensure system security, scalability, and seamless integration for all current and future client modules.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Job 2: Digital Point -->
+        <!-- Job 2: The MakersPlace -->
         <div class="timeline-item">
             <div class="job-header">
                 <div>
-                    <div class="job-title">Intern</div>
-                    <div class="company">Digital Point, Accra, Ghana</div>
+                    <div class="job-title">Robotics Intern</div>
+                    <div class="company">The MakersPlace – Accra, Ghana</div>
                 </div>
-                <span class="job-date">Sept 2020 – Feb 2021</span>
+                <span class="job-date">Jun 2025 – Jul 2025</span>
             </div>
             <div class="job-desc">
                 <ul>
-                    <li>Accurately managed customer and business data entry, ensuring 100% precision for digital record-keeping and workflow optimization.</li>
-                    <li>Scanned, organized, and archived critical documents, improving database retrieval times and digital accessibility.</li>
+                    <li><strong>System Design &amp; Hardware Integration:</strong> Engineered and programmed an interactive mBot showcased at the World Youth Skills Day STEM exhibition, utilizing servo motors to automate an object-relocating gripper mechanism.</li>
+                    <li><strong>Client Communication &amp; Stakeholder Engagement:</strong> Delivered live technical demonstrations, effectively communicating complex hardware-software integration concepts and robotic systems logic to non-technical stakeholders and public audiences.</li>
+                    <li><strong>Troubleshooting &amp; Problem Solving:</strong> Programmed, tested, and troubleshot complex robotic systems, demonstrating robust logical problem-solving and a strong focus on seamless system integration.</li>
                 </ul>
             </div>
         </div>
 
-        <h3 style="margin-top: 2.5rem;">Technical Projects & Experience</h3>
+        <!-- Job 3: Sunsoft Systems -->
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Data Entry Intern</div>
+                    <div class="company">Sunsoft Systems – Accra, Ghana</div>
+                </div>
+                <span class="job-date">Sep 2020 – Feb 2021</span>
+            </div>
+            <div class="job-desc">
+                <ul>
+                    <li><strong>Data Accuracy &amp; Workflow Optimization:</strong> Accurately managed high-volume customer and business data entry, ensuring 100% precision for digital record-keeping and contributing to overall workflow efficiency.</li>
+                    <li><strong>Information Systems Management:</strong> Scanned, organized, and archived critical business documents, significantly improving relational database retrieval times and digital accessibility for internal teams.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 3rem;">Technical Projects</h3>
 
         <!-- Project 1: E-Commerce & Logistics Platform -->
         <div class="timeline-item">
             <div class="job-header">
                 <div>
                     <div class="job-title">Lead Full-Stack Developer</div>
-                    <div class="company">E-Commerce & Logistics Platform</div>
+                    <div class="company">E-Commerce &amp; Logistics Platform</div>
                 </div>
+                <span class="job-date">Active | Nov 2025</span>
             </div>
             <div class="job-desc">
                 <ul>
-                    <li>Architected a highly scalable, serverless e-commerce platform using React and Supabase, replacing legacy manual operations with an automated digital ecosystem.</li>
-                    <li>Engineered a seamless split-payment checkout flow integrating Paystack to handle both international cards and local Mobile Money APIs.</li>
-                    <li>Developed a real-time logistics tracking dashboard utilizing OSRM and Leaflet, featuring dynamic ETA calculations and live map animations.</li>
-                    <li>Operated under strict Scrum methodologies, managing sprint planning, code reviews, and rapid feature deployment.</li>
+                    <li>Architected a highly scalable, serverless e-commerce platform using React and Supabase, replacing legacy operations with an automated digital ecosystem.</li>
+                    <li>Engineered a secure split-payment checkout flow integrating Paystack and local Mobile Money APIs, demonstrating capability in robust financial processing.</li>
+                    <li>Gathered internal client requirements to design a real-time logistics dashboard, translating business needs into technical specifications using OSRM for live ETA calculations.</li>
+                    <li>Managed continuous integration and deployment (CI/CD) events, orchestrating sprint planning, pull requests, issue triage, and rapid feature deployment under strict Scrum methodologies.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Project 2: AI-Powered Media Transformation App -->
+        <!-- Project 2: Global Entrepreneurship Festival (Hackathon) -->
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Software Developer</div>
+                    <div class="company">Global Entrepreneurship Festival 2025 (Hackathon)</div>
+                </div>
+                <span class="job-date">Nov 2025</span>
+            </div>
+            <div class="job-desc">
+                <ul>
+                    <li>Demonstrated capacity for innovative thinking and problem-solving by developing an AI-powered cybersecurity system prototype under tight deadlines.</li>
+                    <li>Awarded a Certificate of Achievement for an exemplary display of teamwork, leadership, collaboration, and technical execution in a fast-paced environment.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 3: Bluetooth-Controlled IoT Lamp -->
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Hardware/Software Integrator</div>
+                    <div class="company">Bluetooth-Controlled IoT Lamp</div>
+                </div>
+                <span class="job-date">Completed | Feb 2025</span>
+            </div>
+            <div class="job-desc">
+                <ul>
+                    <li>Developed a smart IoT lamp utilizing Arduino, HC-05 Bluetooth modules, and a custom user interface.</li>
+                    <li>Engineered a seamless phone-to-relay communication system, achieving under 1-second response times for instant functionality and demonstrating robust interface integration.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 4: AI-Powered Media Transformation App (Retained) -->
         <div class="timeline-item">
             <div class="job-header">
                 <div>
@@ -254,24 +518,7 @@
             </div>
         </div>
 
-        <!-- Project 3: Hackathon Innovation -->
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Software Developer</div>
-                    <div class="company">Hackathon Innovation and Robotics Expo (Global Entrepreneurship Festival 2025)</div>
-                </div>
-                <span class="job-date">Nov 2025</span>
-            </div>
-            <div class="job-desc">
-                <ul>
-                    <li>Collaborated under pressure to conceptualize and develop an AI-powered cybersecurity system prototype within a tight deadline.</li>
-                    <li>Awarded a Certificate of Achievement (in partnership with Mingo Blox) on November 21st, 2025, for an exemplary display of teamwork, innovation, and problem-solving.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Project 4: Car Rental System -->
+        <!-- Project 5: Car Rental System (Retained) -->
         <div class="timeline-item">
             <div class="job-header">
                 <div>
@@ -286,27 +533,11 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Project 5: IoT Lamp -->
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Hardware/Software Integrator</div>
-                    <div class="company">Bluetooth-Controlled IoT Lamp</div>
-                </div>
-            </div>
-            <div class="job-desc">
-                <ul>
-                    <li>Developed a smart IoT lamp using Arduino, HC-05 Bluetooth, and a custom MIT App Inventor interface.</li>
-                    <li>Engineered a seamless phone-to-relay communication system achieving under 1-second response times for instant on/off functionality.</li>
-                </ul>
-            </div>
-        </div>
     </main>
   </div>
 
   <footer>
-    <p>&copy; 2025 Rodney. All rights reserved.</p>
+    <p>&copy; 2026 Rodney Afriyie. All rights reserved.</p>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/rodney-afriyie-882338365" target="_blank" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>

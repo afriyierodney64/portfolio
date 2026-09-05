@@ -4,246 +4,851 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Rodney</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <title>Projects | Rodney Afriyie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
 
     <style>
-        /* Page Specific: Modern Grid Layout */
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
         }
 
-        /* Card Styling */
-        .project-card {
-            background: white;
-            border-radius: 15px;
+        
+
+        
+
+        
+
+        
+
+        nav a:hover,
+        nav a.active {
+            color: #00bcd4;
+            border-bottom: 2px solid #00bcd4;
+        }
+
+        .projects-page {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .page-header .label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #00bcd4;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: #64748b;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Project Card */
+        .project-card-full {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 1px solid #e2e8f0;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            margin-bottom: 3.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-card-full:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+        }
+
+        .card-inner {
             display: flex;
             flex-direction: column;
-            border: 1px solid #eee;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-            border-color: #00bcd4;
+        @media (min-width: 960px) {
+            .card-inner {
+                flex-direction: row;
+            }
+
+            .card-inner.reverse {
+                flex-direction: row-reverse;
+            }
         }
 
-        .card-thumb {
-            height: 200px;
-            width: 100%;
-            background-color: #f0f0f0;
+        .card-info {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (min-width: 960px) {
+            .card-info {
+                width: 45%;
+                padding: 3rem;
+            }
+        }
+
+        .card-info h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .card-info p {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.32rem 0.85rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0f172a;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+        }
+
+        /* Action Link: Visit Website */
+        .btn-visit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.75rem 1.6rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #0f172a;
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            width: fit-content;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            margin-bottom: 1.75rem;
+        }
+
+        .btn-visit:hover {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-visit svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            fill: none;
+            transition: transform 0.25s ease;
+        }
+
+        .btn-visit:hover svg {
+            transform: translateX(3px) translateY(-1px);
+        }
+
+        /* Project Highlights (Key Features & What LT Eliminated) */
+        .project-highlights {
+            margin-top: 0.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .highlights-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 0.85rem;
+        }
+
+        .highlights-title .highlight-accent {
+            color: #00bcd4;
+        }
+
+        .highlights-title .highlight-danger {
+            color: #ef4444;
+        }
+
+        .highlights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.9rem;
+            border-radius: 0.75rem;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .highlight-item:hover {
+            border-color: #cbd5e1;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .highlight-item.danger {
+            background: #fffaf0;
+            border-color: #fed7aa;
+        }
+
+        .highlight-item.danger:hover {
+            border-color: #fca5a5;
+            background: #fef2f2;
+        }
+
+        .highlight-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #e0f7fa;
+            color: #00838f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .highlight-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .highlight-icon.danger {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .highlight-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .highlight-label {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.35;
+        }
+
+        .badge-new {
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.15rem 0.45rem;
+            background: #00bcd4;
+            color: #ffffff;
+            border-radius: 999px;
+            margin-left: auto;
+        }
+
+        /* Card Gallery Base */
+        .card-gallery {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
 
-        .card-thumb img {
+        @media (min-width: 960px) {
+            .card-gallery {
+                width: 55%;
+                border-top: none;
+                border-left: 1px solid #e2e8f0;
+            }
+
+            .card-inner.reverse .card-gallery {
+                border-left: none;
+                border-right: 1px solid #e2e8f0;
+            }
+        }
+
+        .card-gallery.mobile-gallery {
+            min-height: 650px;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        .card-gallery.desktop-gallery {
+            min-height: 520px;
+            padding: 2.5rem 1.5rem 2.5rem;
+        }
+
+        /* Gallery Toggle Switch */
+        .gallery-toggle-wrap {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 25;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toggle-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .toggle-label.active {
+            color: #00bcd4;
+        }
+
+        .toggle-label.inactive {
+            color: #94a3b8;
+        }
+
+        .toggle-track {
+            width: 36px;
+            height: 20px;
+            border-radius: 999px;
+            background: #cbd5e1;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-track.on {
+            background: #00bcd4;
+        }
+
+        .toggle-knob {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        .toggle-track.on .toggle-knob {
+            transform: translateX(16px);
+        }
+
+        /* ========================================================
+           1. MOBILE PHONE FRAME (BGN Hair Lab & Luxury Threads)
+           ======================================================== */
+        .deck-container.phone-frame {
+            position: relative;
+            width: 270px;
+            max-width: 86%;
+            aspect-ratio: 1179 / 2556;
+            cursor: pointer;
+            margin: 1.5rem auto 1rem;
+        }
+
+        .deck-card.phone-card {
+            position: absolute;
+            inset: 0;
+            border-radius: 2.25rem;
+            border: 7px solid #0f172a;
+            overflow: hidden;
+            background: #0f172a;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .deck-card.phone-card::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 72px;
+            height: 18px;
+            background: #000000;
+            border-radius: 999px;
+            z-index: 10;
+            pointer-events: none;
+            box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.15);
+        }
+
+        .deck-card.phone-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            display: block;
         }
 
-        .project-card:hover .card-thumb img {
-            transform: scale(1.1);
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-content h3 {
-            color: #1e293b;
-            margin-bottom: 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        .card-content p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .badge {
-            background: #00bcd4;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 5px;
-            display: inline-block;
-        }
-
-        /* --- MODAL & SLIDER --- */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(5px);
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
+        /* ========================================================
+           2. ACTUAL DESKTOP MONITOR FRAME
+           ======================================================== */
+        .monitor-frame-wrapper {
             position: relative;
-            width: 90%;
-            max-width: 900px;
-            background: transparent;
-            border-radius: 8px;
-            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem auto;
+        }
+
+        .monitor-bezel {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 8px 8px 18px 8px;
+            border: 1px solid #334155;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.28);
+            position: relative;
             display: flex;
             flex-direction: column;
         }
 
-        .slider-container {
+        /* Web Cam Dot on Top Bezel */
+        .monitor-bezel::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #334155;
+            border-radius: 50%;
+            z-index: 5;
+        }
+
+        /* Bottom Chin Logo / Indicator */
+        .monitor-bezel::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 3px;
+            background: #334155;
+            border-radius: 2px;
+        }
+
+        .monitor-screen-area {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9;
-            background: #000;
-        }
-
-        .slide {
-            display: none;
-            width: 100%;
             height: 100%;
-            text-align: center;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #0b0f19;
+            cursor: pointer;
         }
 
-        .slide.active-slide {
-            display: block;
-            animation: fadeEffect 0.5s;
+        /* Monitor Stand Neck & Base */
+        .monitor-neck {
+            width: 60px;
+            height: 28px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-left: 1px solid #334155;
+            border-right: 1px solid #334155;
+            position: relative;
+            z-index: 1;
         }
 
-        .slide img {
+        .monitor-base {
+            width: 160px;
+            height: 7px;
+            background: linear-gradient(90deg, #334155, #64748b, #334155);
+            border-radius: 3px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Deck Card Stack inside Monitor Screen */
+        .deck-card.desktop-card {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #0b0f19;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .deck-card.desktop-card {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #0b0f19;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .deck-card.desktop-card img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            display: block;
         }
 
-        /* Controls */
-        .prev,
-        .next {
+        /* ========================================================
+           AUTOMATEDLITE REPLICATED DECK ANIMATION
+           ======================================================== */
+        .deck-card[data-pos="1"] {
+            z-index: 30;
+            transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+            opacity: 1;
+        }
+
+        .deck-card[data-pos="2"] {
+            z-index: 20;
+            transform: translateX(8%) translateY(-4%) rotate(4deg) scale(0.95);
+            opacity: 0.82;
+        }
+
+        .deck-card[data-pos="3"] {
+            z-index: 10;
+            transform: translateX(16%) translateY(-8%) rotate(8deg) scale(0.9);
+            opacity: 0.65;
+        }
+
+        .deck-card:not([data-pos="1"]):not([data-pos="2"]):not([data-pos="3"]) {
+            z-index: 0;
+            transform: translateX(16%) translateY(-8%) rotate(8deg) scale(0.9);
+            opacity: 0;
+        }
+
+        .deck-card.animating-out {
+            transform: translateX(120%) rotate(15deg) scale(1.05) !important;
+            opacity: 0 !important;
+            z-index: 40;
+        }
+
+        .deck-hint {
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+
+        .deck-hint svg {
+            width: 14px;
+            height: 14px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ========================================================
+           GRID VIEWS (Landscape Images Fill Screen & 4 Corners)
+           ======================================================== */
+        .gallery-view {
+            transition: opacity 0.3s ease;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-view.hidden {
+            display: none !important;
+        }
+
+        .gallery-view.fading {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mobile Phone Thumbnails */
+        .grid-container.phone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 0.85rem;
+            width: 100%;
+            padding-top: 1.5rem;
+        }
+
+        .grid-thumb.phone-thumb {
+            border-radius: 0.85rem;
+            overflow: hidden;
             cursor: pointer;
+            border: 3px solid #0f172a;
+            aspect-ratio: 1179 / 2556;
+            background: #0f172a;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-thumb.phone-thumb:hover {
+            border-color: #00bcd4;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.25);
+        }
+
+        .grid-thumb.phone-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Desktop Grid - Fill the container fully */
+        .grid-container.desktop-grid {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            gap: 0.85rem;
+            padding-top: 1.5rem;
+        }
+
+        /* EXACT 4 IMAGES: 2x2 Grid, one at each of the 4 corners filling the area */
+        .grid-container.desktop-grid.grid-4 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1rem;
+            height: 440px;
+        }
+
+        /* 5 or more images: 2-column or 3-column filling grid */
+        .grid-container.desktop-grid.grid-many {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.85rem;
+        }
+
+        .grid-thumb.desktop-thumb {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #334155;
+            background: #0f172a;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-container.desktop-grid.grid-4 .grid-thumb.desktop-thumb {
+            width: 100%;
+            height: 100%;
+            min-height: 190px;
+        }
+
+        .grid-container.desktop-grid.grid-many .grid-thumb.desktop-thumb {
+            aspect-ratio: 16 / 10;
+        }
+
+        .grid-thumb.desktop-thumb:hover {
+            border-color: #00bcd4;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 188, 212, 0.25);
+        }
+
+        .grid-thumb.desktop-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* ========================================================
+           LIGHTBOX WITH MOBILE SWIPE (LEFT, RIGHT, DOWN TO CLOSE)
+           ======================================================== */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(10, 15, 29, 0.96);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            touch-action: none;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 94vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            user-select: none;
+            transition: transform 0.15s ease-out;
+        }
+
+        .lightbox-frame {
+            background: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
+            border: 2px solid #334155;
+        }
+
+        .lightbox-frame.is-phone {
+            border-radius: 2.25rem;
+            border: 7px solid #0f172a;
+            max-width: 380px;
+        }
+
+        .lightbox-frame img {
+            width: 100%;
+            max-height: 82vh;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .lightbox-nav {
             position: absolute;
             top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 24px;
-            transition: 0.3s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev:hover,
-        .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 35px;
-            font-weight: bold;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            z-index: 2001;
+            transition: background 0.2s;
         }
 
-        .modal-info {
-            color: white;
-            padding: 1rem 0;
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .lightbox-prev { left: -68px; }
+        .lightbox-next { right: -68px; }
+
+        .lightbox-counter {
             text-align: center;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            font-weight: 500;
         }
 
-        .modal-details {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            color: #333;
-            text-align: left;
-            max-height: 250px;
-            overflow-y: auto;
-            margin-top: 10px;
+        .lightbox-swipe-hint {
+            display: none;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            margin-top: 0.4rem;
         }
 
-        .modal-details h4 {
-            color: #1e293b;
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-details p {
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-details li {
-            margin-bottom: 0.3rem;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        @keyframes fadeEffect {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @media (max-width: 768px) {
-            .slider-container {
-                aspect-ratio: 4 / 3;
-            }
-
-            .prev,
-            .next {
-                font-size: 18px;
-                padding: 12px;
-            }
+        @media (max-width: 800px) {
+            .lightbox-prev { left: 8px; }
+            .lightbox-next { right: 8px; }
+            .lightbox-close { top: -46px; right: 6px; }
+            .lightbox-swipe-hint { display: block; }
+            .page-header h1 { font-size: 2rem; }
+            .deck-container.phone-frame { width: 230px; }
+            .monitor-frame-wrapper { max-width: 360px; }
+            .card-gallery.mobile-gallery { min-height: 540px; }
+            .card-gallery.desktop-gallery { min-height: 420px; }
         }
     </style>
 </head>
 
 <body>
-
     <header>
-        <a href="index.html">
-            <h1>Rodney</h1>
-        </a>
+        <a href="index.html"><h1>Rodney Afriyie</h1></a>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -252,129 +857,613 @@
         </nav>
     </header>
 
-    <section>
-        <h2 style="text-align:center; margin-top:1rem;">My Projects</h2>
+    <section class="projects-page">
+        <div class="page-header">
+            <span class="label">Portfolio &amp; Case Studies</span>
+            <h1>Featured Engineering Projects</h1>
+            <p>Full-stack architectures, distributed nodes, and scalable web platforms engineered for peak performance.</p>
+        </div>
 
-        <div class="projects-container">
+        <!-- ========================================================
+             PROJECT 1: BGN Hair Lab (Mobile Frame + Key Features)
+             ======================================================== -->
+        <div class="project-card-full" id="proj-bgn">
+            <div class="card-inner">
+                <div class="card-info">
+                    <h2>BGN Hair Lab</h2>
+                    <p>A specialized haircare brand formulated for Black hair, coils, and protective styles. Engineered a high-performance digital platform featuring automated handling of orders and smart rider logistics.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Paystack</span>
+                    </div>
 
-            <!-- Project 1 Card -->
-            <div class="project-card" onclick="openModal('modal1')">
-                <div class="card-thumb"><img src="images/project1_1.jpg" alt="Car Rental App"></div>
-                <div class="card-content">
-                    <h3>Car Rental Application</h3>
-                    <p>A complete system for managing car rentals and bookings with an intuitive user interface.</p>
+                    <a href="https://bgnhairlab.com" target="_blank" rel="noopener noreferrer" class="btn-visit">
+                        <span>Visit Website</span>
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                    </a>
+
+                    <!-- Key Features from AutomatedLite -->
+                    <div class="project-highlights">
+                        <p class="highlights-title">Key <span class="highlight-accent">Features</span></p>
+                        <div class="highlights-list">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10h8M9 14h6"/></svg>
+                                </div>
+                                <div class="highlight-content">
+                                    <span class="highlight-label">Coin Loyalty System</span>
+                                    <span class="badge-new">NEW</span>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <div class="highlight-content">
+                                    <span class="highlight-label">Ambassador System</span>
+                                    <span class="badge-new">NEW</span>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                </div>
+                                <div class="highlight-content">
+                                    <span class="highlight-label">Organized In-House Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Project 2 Card -->
-            <div class="project-card" onclick="openModal('modal2')">
-                <div class="card-thumb"><img src="images/project2_1.jpg" alt="IoT Lamp"></div>
-                <div class="card-content">
-                    <h3>Bluetooth-Controlled Lamp</h3>
-                    <p>IoT project allowing lamp control via a mobile device using Arduino and Bluetooth modules.</p>
-                </div>
-            </div>
+                <div class="card-gallery mobile-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
 
-            <!-- Project 3 Card -->
-            <div class="project-card" onclick="openModal('modal3')">
-                <div class="card-thumb">
-                    <img src="images/project3_1.png" alt="E-commerce App">
-                </div>
-                <div class="card-content">
-                    <span class="badge">Featured</span>
-                    <h3>E-commerce</h3>
-                    <p>A serverless, white-glove SaaS platform that transforms chaotic manual e-commerce operations into
-                        fully automated logistics and payment ecosystems.</p>
-                </div>
-            </div>
+                    <div class="gallery-view deck-view">
+                        <div class="deck-container phone-frame">
+                            <div class="deck-card phone-card" data-pos="1"><img src="images/bgn/1.PNG" alt="BGN Hair Lab 1"></div>
+                            <div class="deck-card phone-card" data-pos="2"><img src="images/bgn/4.PNG" alt="BGN Hair Lab 2"></div>
+                            <div class="deck-card phone-card" data-pos="3"><img src="images/bgn/5.PNG" alt="BGN Hair Lab 3"></div>
+                            <div class="deck-card phone-card" data-pos="4"><img src="images/bgn/6.PNG" alt="BGN Hair Lab 4"></div>
+                            <div class="deck-card phone-card" data-pos="5"><img src="images/bgn/7.PNG" alt="BGN Hair Lab 5"></div>
+                            <div class="deck-card phone-card" data-pos="6"><img src="images/bgn/8.PNG" alt="BGN Hair Lab 6"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap to cycle mobile preview</span>
+                        </div>
+                    </div>
 
-            <!-- Project 4 Card -->
-            <div class="project-card" onclick="openModal('modal4')">
-                <div class="card-thumb"><img src="images/project4_1.jpg" alt="Affiliate Site"></div>
-                <div class="card-content">
-                    <h3>Affiliate Marketing Website</h3>
-                    <p>An e-commerce style site focused on affiliate product tracking and conversion optimization.</p>
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container phone-grid">
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/1.PNG" data-type="phone"><img src="images/bgn/1.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/4.PNG" data-type="phone"><img src="images/bgn/4.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/5.PNG" data-type="phone"><img src="images/bgn/5.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/6.PNG" data-type="phone"><img src="images/bgn/6.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/7.PNG" data-type="phone"><img src="images/bgn/7.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/8.PNG" data-type="phone"><img src="images/bgn/8.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/9.PNG" data-type="phone"><img src="images/bgn/9.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/10.PNG" data-type="phone"><img src="images/bgn/10.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/11.PNG" data-type="phone"><img src="images/bgn/11.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/12.PNG" data-type="phone"><img src="images/bgn/12.PNG" alt="BGN"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/bgn/13.PNG" data-type="phone"><img src="images/bgn/13.PNG" alt="BGN"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- ========================================================
+             PROJECT 2: Luxury Threads (Mobile Frame + What LT Eliminated)
+             ======================================================== -->
+        <div class="project-card-full" id="proj-lt">
+            <div class="card-inner reverse">
+                <div class="card-info">
+                    <h2>Luxury Threads</h2>
+                    <p>The system automating manual local businesses. A premium, seamless e-commerce platform that handles high-volume luxury retail operations with automated order processing.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">OSRM</span>
+                    </div>
+
+                    <a href="https://luxurythreads.store" target="_blank" rel="noopener noreferrer" class="btn-visit">
+                        <span>Visit Website</span>
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                    </a>
+
+                    <!-- What Luxury Threads Eliminated from AutomatedLite -->
+                    <div class="project-highlights">
+                        <p class="highlights-title">What Luxury Threads <span class="highlight-danger">Eliminated</span></p>
+                        <div class="highlights-list">
+                            <div class="highlight-item danger">
+                                <div class="highlight-icon danger">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                                </div>
+                                <div class="highlight-content">
+                                    <span class="highlight-label">Human Error</span>
+                                </div>
+                            </div>
+                            <div class="highlight-item danger">
+                                <div class="highlight-icon danger">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                                </div>
+                                <div class="highlight-content">
+                                    <span class="highlight-label">Manual Payments</span>
+                                </div>
+                            </div>
+                            <div class="highlight-item danger">
+                                <div class="highlight-icon danger">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                                </div>
+                                <div class="highlight-content">
+                                    <span class="highlight-label">Typing at Checkout &amp; Sign In/Sign Up</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-gallery mobile-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="deck-container phone-frame">
+                            <div class="deck-card phone-card" data-pos="1"><img src="images/luxurythreads/1.jpg" alt="Luxury Threads 1"></div>
+                            <div class="deck-card phone-card" data-pos="2"><img src="images/luxurythreads/3.jpg" alt="Luxury Threads 2"></div>
+                            <div class="deck-card phone-card" data-pos="3"><img src="images/luxurythreads/4.jpg" alt="Luxury Threads 3"></div>
+                            <div class="deck-card phone-card" data-pos="4"><img src="images/luxurythreads/5.jpg" alt="Luxury Threads 4"></div>
+                            <div class="deck-card phone-card" data-pos="5"><img src="images/luxurythreads/6.jpg" alt="Luxury Threads 5"></div>
+                            <div class="deck-card phone-card" data-pos="6"><img src="images/luxurythreads/2.PNG" alt="Luxury Threads 6"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap to cycle mobile preview</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container phone-grid">
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/1.jpg" data-type="phone"><img src="images/luxurythreads/1.jpg" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/3.jpg" data-type="phone"><img src="images/luxurythreads/3.jpg" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/4.jpg" data-type="phone"><img src="images/luxurythreads/4.jpg" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/5.jpg" data-type="phone"><img src="images/luxurythreads/5.jpg" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/6.jpg" data-type="phone"><img src="images/luxurythreads/6.jpg" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/2.PNG" data-type="phone"><img src="images/luxurythreads/2.PNG" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/4.PNG" data-type="phone"><img src="images/luxurythreads/4.PNG" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/7.PNG" data-type="phone"><img src="images/luxurythreads/7.PNG" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/8.PNG" data-type="phone"><img src="images/luxurythreads/8.PNG" alt="LT"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/luxurythreads/9.PNG" data-type="phone"><img src="images/luxurythreads/9.PNG" alt="LT"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 3: AEOPY Master Node Network & Telemetry Dashboard (Monitor Frame + 4 Photos)
+             ======================================================== -->
+        <div class="project-card-full" id="proj-aeopy">
+            <div class="card-inner">
+                <div class="card-info">
+                    <h2>AEOPY: AEOPY Master Node Network &amp; Telemetry Dashboard</h2>
+                    <p>Engineered a centralized administrative command center managing distributed e-commerce nodes using React, Supabase, and real-time database tunneling. Implemented an automated transaction routing terminal and cross-database audit engine, achieving real-time commission capture, ledger reconciliation, and sub-second payment handshake telemetry.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Payment Routing</span>
+                        <span class="tech-tag">Fintech</span>
+                        <span class="tech-tag">Multi-Tenant</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/Aeopy Master/1.jpeg" alt="AEOPY Master Node 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/Aeopy Master/2.jpeg" alt="AEOPY Master Node 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/Aeopy Master/3.jpeg" alt="AEOPY Master Node 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/Aeopy Master/4.jpeg" alt="AEOPY Master Node 4"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <!-- EXACT 4 IMAGES FILLING SCREEN: 2x2 one at each corner -->
+                        <div class="grid-container desktop-grid grid-4">
+                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/1.jpeg" data-type="desktop"><img src="images/Aeopy Master/1.jpeg" alt="AEOPY 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/2.jpeg" data-type="desktop"><img src="images/Aeopy Master/2.jpeg" alt="AEOPY 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/3.jpeg" data-type="desktop"><img src="images/Aeopy Master/3.jpeg" alt="AEOPY 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/4.jpeg" data-type="desktop"><img src="images/Aeopy Master/4.jpeg" alt="AEOPY 4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 4: Multiplayer Exam Trivia Arena (Monitor Frame + 8 Photos)
+             ======================================================== -->
+        <div class="project-card-full" id="proj-trivia">
+            <div class="card-inner reverse">
+                <div class="card-info">
+                    <h2>Multiplayer Exam Trivia Arena</h2>
+                    <p>Developed a full-stack, real-time multiplayer exam study platform utilizing React, TypeScript, Tailwind CSS, and Firebase Firestore. Engineered live synchronized question countdowns, interactive leaderboards, and instant peer score evaluation to facilitate high-yield active recall and collaborative revision sessions among study groups.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Firestore</span>
+                        <span class="tech-tag">Exam Prep</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/Trivia Battle/1.jpeg" alt="Trivia 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/Trivia Battle/2.jpeg" alt="Trivia 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/Trivia Battle/3.jpeg" alt="Trivia 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/Trivia Battle/4.jpeg" alt="Trivia 4"></div>
+                                    <div class="deck-card desktop-card" data-pos="5"><img src="images/Trivia Battle/5.jpeg" alt="Trivia 5"></div>
+                                    <div class="deck-card desktop-card" data-pos="6"><img src="images/Trivia Battle/6.jpeg" alt="Trivia 6"></div>
+                                    <div class="deck-card desktop-card" data-pos="7"><img src="images/Trivia Battle/7.jpeg" alt="Trivia 7"></div>
+                                    <div class="deck-card desktop-card" data-pos="8"><img src="images/Trivia Battle/8.jpeg" alt="Trivia 8"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container desktop-grid grid-many">
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/1.jpeg" data-type="desktop"><img src="images/Trivia Battle/1.jpeg" alt="Trivia 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/2.jpeg" data-type="desktop"><img src="images/Trivia Battle/2.jpeg" alt="Trivia 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/3.jpeg" data-type="desktop"><img src="images/Trivia Battle/3.jpeg" alt="Trivia 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/4.jpeg" data-type="desktop"><img src="images/Trivia Battle/4.jpeg" alt="Trivia 4"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/5.jpeg" data-type="desktop"><img src="images/Trivia Battle/5.jpeg" alt="Trivia 5"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/6.jpeg" data-type="desktop"><img src="images/Trivia Battle/6.jpeg" alt="Trivia 6"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/7.jpeg" data-type="desktop"><img src="images/Trivia Battle/7.jpeg" alt="Trivia 7"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Trivia Battle/8.jpeg" data-type="desktop"><img src="images/Trivia Battle/8.jpeg" alt="Trivia 8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 5: Contract Generator (Monitor Frame + 5 Photos)
+             ======================================================== -->
+        <div class="project-card-full" id="proj-contract">
+            <div class="card-inner">
+                <div class="card-info">
+                    <h2>Contract Generator</h2>
+                    <p>Engineered an interactive client onboarding wizard and automated legal agreement generator for digital infrastructure partnerships. Features dynamic clause assembly, revenue share calculation modeling, digital signature capture, and client-side vector PDF generation via HTML2PDF, eliminating onboarding friction and standardizing contract execution.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">HTML2PDF</span>
+                        <span class="tech-tag">Legal Tech</span>
+                        <span class="tech-tag">Contract Automation</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/Contract Generator/1.jpeg" alt="Contract 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/Contract Generator/2.jpeg" alt="Contract 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/Contract Generator/3.jpeg" alt="Contract 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/Contract Generator/4.jpeg" alt="Contract 4"></div>
+                                    <div class="deck-card desktop-card" data-pos="5"><img src="images/Contract Generator/5.jpeg" alt="Contract 5"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container desktop-grid grid-many">
+                            <div class="grid-thumb desktop-thumb" data-src="images/Contract Generator/1.jpeg" data-type="desktop"><img src="images/Contract Generator/1.jpeg" alt="Contract 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Contract Generator/2.jpeg" data-type="desktop"><img src="images/Contract Generator/2.jpeg" alt="Contract 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Contract Generator/3.jpeg" data-type="desktop"><img src="images/Contract Generator/3.jpeg" alt="Contract 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Contract Generator/4.jpeg" data-type="desktop"><img src="images/Contract Generator/4.jpeg" alt="Contract 4"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/Contract Generator/5.jpeg" data-type="desktop"><img src="images/Contract Generator/5.jpeg" alt="Contract 5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 6: E-Commerce & Logistics Platform
+             ======================================================== -->
+        <div class="project-card-full" id="proj-ecom">
+            <div class="card-inner reverse">
+                <div class="card-info">
+                    <h2>E-Commerce &amp; Logistics Platform</h2>
+                    <p>Architected a highly scalable, serverless e-commerce platform using React and Supabase, replacing legacy manual operations with an automated digital ecosystem featuring split-payment checkout and real-time logistics tracking.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Paystack</span>
+                        <span class="tech-tag">Leaflet</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/project3_1.png" alt="E-Commerce 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/project3_2.png" alt="E-Commerce 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/project3_3.png" alt="E-Commerce 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/project3_4.png" alt="E-Commerce 4"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <!-- 4 images 2x2 corner grid -->
+                        <div class="grid-container desktop-grid grid-4">
+                            <div class="grid-thumb desktop-thumb" data-src="images/project3_1.png" data-type="desktop"><img src="images/project3_1.png" alt="E-Commerce 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project3_2.png" data-type="desktop"><img src="images/project3_2.png" alt="E-Commerce 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project3_3.png" data-type="desktop"><img src="images/project3_3.png" alt="E-Commerce 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project3_4.png" data-type="desktop"><img src="images/project3_4.png" alt="E-Commerce 4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 7: Car Rental Application
+             ======================================================== -->
+        <div class="project-card-full" id="proj-car">
+            <div class="card-inner">
+                <div class="card-info">
+                    <h2>Car Rental Application</h2>
+                    <p>Built a full-stack car rental management system using MySQL and Python/Tkinter, enabling seamless car bookings and real-time inventory updates. Cut booking processing time by 60% and eliminated double-bookings.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Tkinter</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/project1_1.jpg" alt="Car Rental 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/project1_2.jpg" alt="Car Rental 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/project1_3.jpg" alt="Car Rental 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/project1_4.jpg" alt="Car Rental 4"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container desktop-grid grid-4">
+                            <div class="grid-thumb desktop-thumb" data-src="images/project1_1.jpg" data-type="desktop"><img src="images/project1_1.jpg" alt="Car Rental 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project1_2.jpg" data-type="desktop"><img src="images/project1_2.jpg" alt="Car Rental 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project1_3.jpg" data-type="desktop"><img src="images/project1_3.jpg" alt="Car Rental 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project1_4.jpg" data-type="desktop"><img src="images/project1_4.jpg" alt="Car Rental 4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 8: Bluetooth-Controlled IoT Lamp
+             ======================================================== -->
+        <div class="project-card-full" id="proj-iot">
+            <div class="card-inner reverse">
+                <div class="card-info">
+                    <h2>Bluetooth-Controlled IoT Lamp</h2>
+                    <p>Engineered an intelligent embedded lighting device powered by an ESP32 microcontroller with a custom React Native mobile app. Designed PWM color temperature transitions and low-latency Bluetooth Low Energy (BLE) control.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">BLE</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/project2_1.jpg" alt="IoT Lamp 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/project2_2.jpg" alt="IoT Lamp 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/project2_3.jpg" alt="IoT Lamp 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/project2_4.jpg" alt="IoT Lamp 4"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container desktop-grid grid-4">
+                            <div class="grid-thumb desktop-thumb" data-src="images/project2_1.jpg" data-type="desktop"><img src="images/project2_1.jpg" alt="IoT Lamp 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project2_2.jpg" data-type="desktop"><img src="images/project2_2.jpg" alt="IoT Lamp 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project2_3.jpg" data-type="desktop"><img src="images/project2_3.jpg" alt="IoT Lamp 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project2_4.jpg" data-type="desktop"><img src="images/project2_4.jpg" alt="IoT Lamp 4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 9: Affiliate Marketing Platform
+             ======================================================== -->
+        <div class="project-card-full" id="proj-affiliate">
+            <div class="card-inner">
+                <div class="card-info">
+                    <h2>Affiliate Marketing Platform</h2>
+                    <p>Developed a high-converting affiliate marketing hub with programmatic SEO structure, fast static generation, and integrated analytics to maximize conversion rates and referral commissions.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">SEO</span>
+                    </div>
+                </div>
+
+                <div class="card-gallery desktop-gallery">
+                    <div class="gallery-toggle-wrap">
+                        <span class="toggle-label active" data-role="deck-label">Deck</span>
+                        <div class="toggle-track"><div class="toggle-knob"></div></div>
+                        <span class="toggle-label inactive" data-role="grid-label">Grid</span>
+                    </div>
+
+                    <div class="gallery-view deck-view">
+                        <div class="monitor-frame-wrapper">
+                            <div class="monitor-bezel">
+                                <div class="monitor-screen-area deck-container">
+                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/project4_1.jpg" alt="Affiliate 1"></div>
+                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/project4_2.jpg" alt="Affiliate 2"></div>
+                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/project4_3.jpg" alt="Affiliate 3"></div>
+                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/project4_4.jpg" alt="Affiliate 4"></div>
+                                </div>
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                        <div class="deck-hint">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                            <span>Tap screen to cycle display</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-view grid-view hidden">
+                        <div class="grid-container desktop-grid grid-4">
+                            <div class="grid-thumb desktop-thumb" data-src="images/project4_1.jpg" data-type="desktop"><img src="images/project4_1.jpg" alt="Affiliate 1"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project4_2.jpg" data-type="desktop"><img src="images/project4_2.jpg" alt="Affiliate 2"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project4_3.jpg" data-type="desktop"><img src="images/project4_3.jpg" alt="Affiliate 3"></div>
+                            <div class="grid-thumb desktop-thumb" data-src="images/project4_4.jpg" data-type="desktop"><img src="images/project4_4.jpg" alt="Affiliate 4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-    <!-- ================= MODALS ================= -->
-
-    <!-- Modal 1 -->
-    <div id="modal1" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
-            <div class="slider-container" id="slider1">
-                <div class="slide active-slide"><img src="images/project1_1.jpg"></div>
-                <div class="slide"><img src="images/project1_2.jpg"></div>
-                <div class="slide"><img src="images/project1_3.jpg"></div>
-                <div class="slide"><img src="images/project1_4.jpg"></div>
-                <a class="prev" onclick="plusSlides(-1, 'slider1')">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 'slider1')">&#10095;</a>
+    <!-- ========================================================
+         LIGHTBOX MODAL WITH MOBILE SWIPE (LEFT, RIGHT, DOWN)
+         ======================================================== -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-content" id="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&larr;</button>
+            <div class="lightbox-frame" id="lightbox-frame">
+                <img id="lightbox-img" src="" alt="Full view" />
             </div>
-            <div class="modal-info">
-                <h3>Car Rental Application</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div id="modal2" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
-            <div class="slider-container" id="slider2">
-                <div class="slide active-slide"><img src="images/project2_1.jpg"></div>
-                <div class="slide"><img src="images/project2_2.jpg"></div>
-                <div class="slide"><img src="images/project2_3.jpg"></div>
-                <div class="slide"><img src="images/project2_4.jpg"></div>
-                <a class="prev" onclick="plusSlides(-1, 'slider2')">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 'slider2')">&#10095;</a>
-            </div>
-            <div class="modal-info">
-                <h3>Bluetooth-Controlled Lamp</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div id="modal3" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
-            <div class="slider-container" id="slider3">
-                <div class="slide active-slide"><img src="images/project3_1.png"></div>
-                <div class="slide"><img src="images/project3_2.png"></div>
-                <div class="slide"><img src="images/project3_3.png"></div>
-                <div class="slide"><img src="images/project3_4.png"></div>
-                <a class="prev" onclick="plusSlides(-1, 'slider3')">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 'slider3')">&#10095;</a>
-            </div>
-            <div class="modal-info">
-                <h3>E-commerce</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div id="modal4" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
-            <div class="slider-container" id="slider4">
-                <div class="slide active-slide"><img src="images/project4_1.jpg"></div>
-                <div class="slide"><img src="images/project4_3.jpg"></div>
-                <div class="slide"><img src="images/project4_2.jpg"></div>
-                <div class="slide"><img src="images/project4_4.jpg"></div>
-                <a class="prev" onclick="plusSlides(-1, 'slider4')">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 'slider4')">&#10095;</a>
-            </div>
-            <div class="modal-info">
-                <h3>Affiliate Marketing Website</h3>
-            </div>
+            <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&rarr;</button>
+            <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+            <div class="lightbox-swipe-hint">Swipe &larr; &rarr; to navigate &bull; Swipe &darr; to close</div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Rodney. All rights reserved.</p>
+        <p>&copy; 2026 Rodney Afriyie. All rights reserved.</p>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/rodney-afriyie-882338365" target="_blank" aria-label="LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -385,52 +1474,217 @@
         </div>
     </footer>
 
+    <!-- ========================================================
+         SCRIPTS: AUTOMATEDLITE DECK ANIMATION, VIEW TOGGLING & SWIPE LIGHTBOX
+         ======================================================== -->
     <script>
-        // Slider Logic
-        let slideIndices = { 'slider1': 1, 'slider2': 1, 'slider3': 1, 'slider4': 1 };
+        document.addEventListener('DOMContentLoaded', () => {
 
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-            let sliderId = document.getElementById(modalId).querySelector('.slider-container').id;
-            showSlides(slideIndices[sliderId], sliderId);
-            document.body.style.overflow = 'hidden';
-        }
+            // --- REPLICATE EXACT AUTOMATEDLITE DECK ANIMATION ---
+            document.querySelectorAll('.deck-container').forEach(deck => {
+                deck.addEventListener('click', () => {
+                    const cards = Array.from(deck.querySelectorAll('.deck-card'));
+                    const topCard = cards.find(card => card.getAttribute('data-pos') === '1');
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+                    if (!topCard || topCard.classList.contains('animating-out')) return;
 
-        // Close when clicking outside
-        window.onclick = function (event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
+                    topCard.classList.add('animating-out');
 
-        function plusSlides(n, sliderId) { showSlides(slideIndices[sliderId] += n, sliderId); }
+                    cards.forEach(card => {
+                        const currentPos = parseInt(card.getAttribute('data-pos'), 10);
+                        if (currentPos > 1) {
+                            card.setAttribute('data-pos', String(currentPos - 1));
+                        }
+                    });
 
-        function showSlides(n, sliderId) {
-            let i;
-            let slider = document.getElementById(sliderId);
-            let slides = slider.getElementsByClassName("slide");
-            if (n > slides.length) { slideIndices[sliderId] = 1 }
-            if (n < 1) { slideIndices[sliderId] = slides.length }
-            for (i = 0; i < slides.length; i++) { slides[i].classList.remove("active-slide"); }
-            slides[slideIndices[sliderId] - 1].classList.add("active-slide");
-        }
-
-        // Swipe Support for Touch Screens
-        document.querySelectorAll('.slider-container').forEach(slider => {
-            let touchstartX = 0;
-            let touchendX = 0;
-            slider.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; });
-            slider.addEventListener('touchend', e => {
-                touchendX = e.changedTouches[0].screenX;
-                if (touchendX < touchstartX - 50) plusSlides(1, slider.id);
-                if (touchendX > touchstartX + 50) plusSlides(-1, slider.id);
+                    setTimeout(() => {
+                        topCard.classList.remove('animating-out');
+                        topCard.setAttribute('data-pos', String(cards.length));
+                        deck.appendChild(topCard);
+                    }, 500);
+                });
             });
+
+            // --- View Toggle (Deck <-> Grid) ---
+            document.querySelectorAll('.card-gallery').forEach(gallery => {
+                const toggleTrack = gallery.querySelector('.toggle-track');
+                const deckLabel = gallery.querySelector('[data-role="deck-label"]');
+                const gridLabel = gallery.querySelector('[data-role="grid-label"]');
+                const deckView = gallery.querySelector('.deck-view');
+                const gridView = gallery.querySelector('.grid-view');
+
+                if (!toggleTrack) return;
+
+                function setMode(mode) {
+                    if (mode === 'grid') {
+                        toggleTrack.classList.add('on');
+                        deckLabel.classList.remove('active');
+                        deckLabel.classList.add('inactive');
+                        gridLabel.classList.remove('inactive');
+                        gridLabel.classList.add('active');
+
+                        deckView.classList.add('fading');
+                        setTimeout(() => {
+                            deckView.classList.add('hidden');
+                            deckView.classList.remove('fading');
+                            gridView.classList.remove('hidden');
+                        }, 200);
+                    } else {
+                        toggleTrack.classList.remove('on');
+                        gridLabel.classList.remove('active');
+                        gridLabel.classList.add('inactive');
+                        deckLabel.classList.remove('inactive');
+                        deckLabel.classList.add('active');
+
+                        gridView.classList.add('fading');
+                        setTimeout(() => {
+                            gridView.classList.add('hidden');
+                            gridView.classList.remove('fading');
+                            deckView.classList.remove('hidden');
+                        }, 200);
+                    }
+                }
+
+                toggleTrack.addEventListener('click', () => {
+                    setMode(toggleTrack.classList.contains('on') ? 'deck' : 'grid');
+                });
+                deckLabel.addEventListener('click', () => setMode('deck'));
+                gridLabel.addEventListener('click', () => setMode('grid'));
+            });
+
+            // --- LIGHTBOX WITH MOBILE SWIPE (LEFT, RIGHT, DOWN) ---
+            const lightbox = document.getElementById('lightbox');
+            const lightboxContent = document.getElementById('lightbox-content');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxFrame = document.getElementById('lightbox-frame');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+
+            let currentImages = [];
+            let currentIndex = 0;
+            let currentIsPhone = false;
+
+            function openLightbox(images, startIndex, isPhone) {
+                currentImages = images;
+                currentIndex = startIndex;
+                currentIsPhone = isPhone;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightboxContent.style.transform = '';
+                document.body.style.overflow = '';
+            }
+
+            function updateLightbox() {
+                lightboxImg.src = currentImages[currentIndex];
+                lightboxCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+                if (currentIsPhone) {
+                    lightboxFrame.classList.add('is-phone');
+                } else {
+                    lightboxFrame.classList.remove('is-phone');
+                }
+            }
+
+            // Click on Grid Thumbnails
+            document.querySelectorAll('.grid-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    const gallery = thumb.closest('.card-gallery');
+                    const thumbs = Array.from(gallery.querySelectorAll('.grid-thumb'));
+                    const images = thumbs.map(t => t.getAttribute('data-src'));
+                    const isPhone = thumb.classList.contains('phone-thumb') || thumb.getAttribute('data-type') === 'phone';
+                    const idx = thumbs.indexOf(thumb);
+                    openLightbox(images, Math.max(0, idx), isPhone);
+                });
+            });
+
+            // Navigation Controls
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                updateLightbox();
+            });
+            lightboxNext.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                updateLightbox();
+            });
+
+            lightbox.addEventListener('click', e => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', e => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') lightboxPrev.click();
+                if (e.key === 'ArrowRight') lightboxNext.click();
+            });
+
+            // --- MOBILE TOUCH GESTURES (SWIPE LEFT, RIGHT, DOWN) ---
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+            let isSwiping = false;
+
+            lightbox.addEventListener('touchstart', e => {
+                if (!lightbox.classList.contains('active')) return;
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                isSwiping = true;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchmove', e => {
+                if (!isSwiping || !lightbox.classList.contains('active')) return;
+                const currentY = e.changedTouches[0].screenY;
+                const currentX = e.changedTouches[0].screenX;
+                const deltaY = currentY - touchStartY;
+                const deltaX = currentX - touchStartX;
+
+                // If primarily swiping down, give interactive drag feedback
+                if (deltaY > 0 && deltaY > Math.abs(deltaX)) {
+                    lightboxContent.style.transform = `translateY(${Math.min(deltaY, 200)}px)`;
+                    lightboxContent.style.opacity = `${Math.max(0.4, 1 - deltaY / 300)}`;
+                }
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', e => {
+                if (!isSwiping || !lightbox.classList.contains('active')) return;
+                isSwiping = false;
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+
+                // Check Swipe Down (close)
+                if (deltaY > 70 && Math.abs(deltaY) > Math.abs(deltaX) * 1.2) {
+                    closeLightbox();
+                } 
+                // Check Swipe Left (next)
+                else if (deltaX < -45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+                    lightboxContent.style.transform = '';
+                    lightboxContent.style.opacity = '';
+                    lightboxNext.click();
+                } 
+                // Check Swipe Right (prev)
+                else if (deltaX > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+                    lightboxContent.style.transform = '';
+                    lightboxContent.style.opacity = '';
+                    lightboxPrev.click();
+                } 
+                // Reset
+                else {
+                    lightboxContent.style.transform = '';
+                    lightboxContent.style.opacity = '';
+                }
+            }, { passive: true });
+
         });
     </script>
 </body>
