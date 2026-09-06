@@ -388,7 +388,7 @@
         }
 
         /* ========================================================
-           1. MOBILE PHONE FRAME (BGN Hair Lab & Luxury Threads)
+           1. MOBILE PHONE FRAME (BGN Hair Lab, Luxury Threads & AEOPY Master)
            ======================================================== */
         .deck-container.phone-frame {
             position: relative;
@@ -627,6 +627,21 @@
             gap: 0.85rem;
             width: 100%;
             padding-top: 1.5rem;
+        }
+
+        /* 5-Item Phone Grid (AEOPY Master) - 2-row multi-column grid rather than sitting on a single line */
+        .grid-container.phone-grid.grid-5,
+        #proj-aeopy .grid-container.phone-grid {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 440px) {
+            .grid-container.phone-grid.grid-5,
+            #proj-aeopy .grid-container.phone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .grid-thumb.phone-thumb {
@@ -1052,7 +1067,7 @@
         </div>
 
         <!-- ========================================================
-             PROJECT 3: AEOPY Master Node Network & Telemetry Dashboard (Monitor Frame + 4 Photos)
+             PROJECT 3: AEOPY Master Node Network & Telemetry Dashboard (Mobile Phone Frame + 5 Photos)
              ======================================================== -->
         <div class="project-card-full" id="proj-aeopy">
             <div class="card-inner">
@@ -1068,7 +1083,7 @@
                     </div>
                 </div>
 
-                <div class="card-gallery desktop-gallery">
+                <div class="card-gallery mobile-gallery">
                     <div class="gallery-toggle-wrap">
                         <span class="toggle-label active" data-role="deck-label">Deck</span>
                         <div class="toggle-track"><div class="toggle-knob"></div></div>
@@ -1076,31 +1091,26 @@
                     </div>
 
                     <div class="gallery-view deck-view">
-                        <div class="monitor-frame-wrapper">
-                            <div class="monitor-bezel">
-                                <div class="monitor-screen-area deck-container">
-                                    <div class="deck-card desktop-card" data-pos="1"><img src="images/Aeopy Master/1.jpeg" alt="AEOPY Master Node 1"></div>
-                                    <div class="deck-card desktop-card" data-pos="2"><img src="images/Aeopy Master/2.jpeg" alt="AEOPY Master Node 2"></div>
-                                    <div class="deck-card desktop-card" data-pos="3"><img src="images/Aeopy Master/3.jpeg" alt="AEOPY Master Node 3"></div>
-                                    <div class="deck-card desktop-card" data-pos="4"><img src="images/Aeopy Master/4.jpeg" alt="AEOPY Master Node 4"></div>
-                                </div>
-                            </div>
-                            <div class="monitor-neck"></div>
-                            <div class="monitor-base"></div>
+                        <div class="deck-container phone-frame">
+                            <div class="deck-card phone-card" data-pos="1"><img src="images/Aeopy Master/1.PNG" alt="AEOPY Master Node 1"></div>
+                            <div class="deck-card phone-card" data-pos="2"><img src="images/Aeopy Master/2.PNG" alt="AEOPY Master Node 2"></div>
+                            <div class="deck-card phone-card" data-pos="3"><img src="images/Aeopy Master/3.PNG" alt="AEOPY Master Node 3"></div>
+                            <div class="deck-card phone-card" data-pos="4"><img src="images/Aeopy Master/4.PNG" alt="AEOPY Master Node 4"></div>
+                            <div class="deck-card phone-card" data-pos="5"><img src="images/Aeopy Master/5.PNG" alt="AEOPY Master Node 5"></div>
                         </div>
                         <div class="deck-hint">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
-                            <span>Tap screen to cycle display</span>
+                            <span>Tap to cycle mobile preview</span>
                         </div>
                     </div>
 
                     <div class="gallery-view grid-view hidden">
-                        <!-- EXACT 4 IMAGES FILLING SCREEN: 2x2 one at each corner -->
-                        <div class="grid-container desktop-grid grid-4">
-                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/1.jpeg" data-type="desktop"><img src="images/Aeopy Master/1.jpeg" alt="AEOPY 1"></div>
-                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/2.jpeg" data-type="desktop"><img src="images/Aeopy Master/2.jpeg" alt="AEOPY 2"></div>
-                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/3.jpeg" data-type="desktop"><img src="images/Aeopy Master/3.jpeg" alt="AEOPY 3"></div>
-                            <div class="grid-thumb desktop-thumb" data-src="images/Aeopy Master/4.jpeg" data-type="desktop"><img src="images/Aeopy Master/4.jpeg" alt="AEOPY 4"></div>
+                        <div class="grid-container phone-grid grid-5">
+                            <div class="grid-thumb phone-thumb" data-src="images/Aeopy Master/1.PNG" data-type="phone"><img src="images/Aeopy Master/1.PNG" alt="AEOPY 1"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/Aeopy Master/2.PNG" data-type="phone"><img src="images/Aeopy Master/2.PNG" alt="AEOPY 2"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/Aeopy Master/3.PNG" data-type="phone"><img src="images/Aeopy Master/3.PNG" alt="AEOPY 3"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/Aeopy Master/4.PNG" data-type="phone"><img src="images/Aeopy Master/4.PNG" alt="AEOPY 4"></div>
+                            <div class="grid-thumb phone-thumb" data-src="images/Aeopy Master/5.PNG" data-type="phone"><img src="images/Aeopy Master/5.PNG" alt="AEOPY 5"></div>
                         </div>
                     </div>
                 </div>
